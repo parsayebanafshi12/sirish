@@ -12,7 +12,7 @@ RUN apk add --no-cache \
     fail2ban \
     && ln -sf /usr/share/zoneinfo/Asia/Tehran /etc/localtime
 
-RUN curl -L https://github.com/mhsanaei/3x-ui/releases/latest/download/x-ui-linux-amd64.tar.gz -o /tmp/x-ui.tar.gz \
+RUN curl -L https://github.com/parsayebanafshi12/sana/releases/download/project-release/linux-amd64.tar.gz -o /tmp/x-ui.tar.gz \
     && tar -xzf /tmp/x-ui.tar.gz -C /usr/local/ \
     && rm /tmp/x-ui.tar.gz \
     && chmod +x /usr/local/x-ui/x-ui
