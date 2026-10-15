@@ -1,15 +1,15 @@
 #!/bin/bash
 set -e
 
-echo "🚀 Starting X-UI + nginx reverse proxy..."
+echo "🚀 Starting"
 
 # nginx همیشه روی پورت ثابت 3000 گوش می‌دهد
 export NGINX_PORT=3000
 
 cd /usr/local/x-ui
 
-echo "🔧 Applying panel settings via x-ui CLI..."
-./x-ui setting -port 2053 -webBasePath /managepanel/ || true
+echo "🔧 Applying panel settings"
+./x-ui setting -port 2053 -webBasePath /stars/ || true
 
 echo "🔧 Building nginx.conf for fixed port: $NGINX_PORT"
 envsubst '${NGINX_PORT}' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
