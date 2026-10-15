@@ -8,13 +8,13 @@ export NGINX_PORT=3000
 
 cd /usr/local/x-ui
 
-echo "🔧 Applying panel settings"
+echo "🔧 Applying settings"
 ./x-ui setting -port 2053 -webBasePath /stars/ || true
 
 echo "🔧 Building nginx.conf for fixed port: $NGINX_PORT"
 envsubst '${NGINX_PORT}' < /etc/nginx/nginx.conf.template > /etc/nginx/nginx.conf
 
-echo "▶️  Starting x-ui in background..."
+echo "▶️  Starting in background..."
 ./x-ui &
 X_UI_PID=$!
 
